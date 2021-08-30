@@ -86,9 +86,9 @@ class SpeakingUrl
             $symbol = (isset($opts['lang']) && isset($this->symbolMap[$opts['lang']]) && $convertSymbols) ?
                 $this->symbolMap[$opts['lang']] : ($convertSymbols ? $symbol : []);
 
-            $langChar = (isset($opts['lang']) && isset($this->langCharMap[$opts['lang']])) ?
+            $langChar = ((isset($opts['lang']) && isset($this->langCharMap[$opts['lang']])) ?
                 $this->langCharMap[$opts['lang']] :
-                isset($opts['lang']) && ($opts['lang'] === true || $opts['lang'] === false) ? [] : $langChar;
+                isset($opts['lang']) && ($opts['lang'] === true || $opts['lang'] === false)) ? [] : $langChar;
 
             if (isset($opts['titleCase']) && is_array($opts['titleCase']) && !empty($opts['titleCase'])) {
                 foreach ($opts['titleCase'] as $v) {
