@@ -125,7 +125,7 @@ class SpeakingUrl
         $lastCharWasSymbol = false;
         $lastCharWasDiatric = false;
 
-        $inputChars = preg_split('//u', $input, null, PREG_SPLIT_NO_EMPTY);
+        $inputChars = preg_split('//u', $input, 0, PREG_SPLIT_NO_EMPTY);
         $l = count($inputChars);
 
         foreach ($inputChars as $i => $ch) {
